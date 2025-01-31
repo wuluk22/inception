@@ -17,6 +17,7 @@ RUN apt-get update && \
 
 # Copy the configuration files (if any)
 COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+RUN chmod 644 /etc/mysql/mariadb.conf.d/50-server.cnf
 
 COPY scripts/init-db.sh /usr/local/bin/init-db.sh
 RUN mkdir -p /run/mysqld
